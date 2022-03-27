@@ -36,9 +36,9 @@
 function sendRequest(name, phone, address, goods, sum) {
     const data = {
       client: `${name} ${phone}`,
-      gooods: [],
+      goods: [],
       order: {
-        address: `${address.street}, дом ${address.house}, ${address.entrance} подъезд, этаж ${floor}, кв ${flat}`,
+        address: `ул. ${address.street}, дом ${address.house}, ${address.entrance} подъезд, ${address.floor} этаж, кв ${address.flat}`,
         sum,
       }
     };
@@ -50,5 +50,5 @@ function sendRequest(name, phone, address, goods, sum) {
       });
     });
     
-    return data;
+    return JSON.stringify({ data });
   }
